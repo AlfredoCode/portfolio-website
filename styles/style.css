@@ -1,3 +1,12 @@
+/*------------Dark Mode------------*/
+:root{
+    --bg: #1a1a1a;
+    --text: #dcdcdc;
+    --select: #2c3583;
+    --navbar:#111010;
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,8 +14,19 @@
     scroll-behavior: smooth;
 }
 
+::selection {
+    background: var(--select);
+    color: var(--text);
+
+  }
+
+::-moz-selection {
+    background: var(--select);
+    color: var(--text);
+}
+
 ::-webkit-scrollbar {
-    width: 2px;
+    width: 10px;
     z-index:2;
 }
   
@@ -21,24 +41,27 @@ background: rgb(54, 54, 54);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: rgba(2,83,185,1); 
+background: rgb(46, 45, 45); 
 }
 
 
 
 body{
-    background-color: #1a1a1a;
+    background-color: var(--bg);
     /*background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );*/
     width: 100%;
     display: block;
     margin: auto;
     min-height: 100vh;
     min-width:20vw;
+    transition: background-color 300ms linear;
 }
+
+
 /*------------NAVIGATION------------*/
 #navigation{
     width:100%;
-    background-color: rgb(17, 16, 16);
+    background-color: var(--navbar);
     min-height:4em;
     position: fixed;
     z-index: 1000;  
@@ -99,13 +122,23 @@ body{
     /*background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgb(185, 2, 2) 0%, rgb(221, 4, 228) 100.2% );*/
     box-shadow: 0 4px 8px 0 rgb(221, 4, 228), 0 -4px 8px 0 rgba(2,83,185,1); 
 
+    cursor:pointer;
+
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+
 }
 .link{
     text-align: center;
     margin: 0.6em;
     
 }
-.link.is-active a{
+a.is-active{
     background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgb(185, 2, 2) 0%, rgb(221, 4, 228) 100.2% );
     /*box-shadow: 0 4px 8px 0 rgba(0, 89, 255, 0.568), 0 -4px 8px 0 rgb(0, 0, 0);*/
     box-shadow: 0 4px 8px 0 rgb(221, 4, 228), 0 -4px 8px 0 rgba(2,83,185,1); 
@@ -113,10 +146,11 @@ body{
     text-shadow: 
     -1px -1px 5px #0099ffad,
     -1px -1px 5px rgba(255, 255, 255, 0.589);
+
 }
 
 
-.container {
+.container{
 	width: 30px;
 	height: 30px;
 	border-radius: 100%;
@@ -135,14 +169,35 @@ body{
     
     
 }
-.container:hover{
-    background-color: rgb(220, 220, 220);
+.container.light{
+    width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	
+    background-color: var(--text);
+	position: relative;
+    display:flex;
+    z-index: 20;
+    top:5px;
+    cursor:pointer;
+    transition: 0.5s ease 0s;
+
     border-color:white;
     border-style:solid;
-    border-width:1px;
-    
-    
-    
+    border-width:1px; 
+}
+.container:hover{
+    background-color: var(--text);
+    border-color:white;
+    border-style:solid;
+    border-width:1px;   
+}
+
+.container.light:hover{
+    background-color: rgba(41, 40, 40, 1);
+    border-color:white;
+    border-style:solid;
+    border-width:1px;   
 }
 
 
@@ -179,6 +234,7 @@ body{
 
 h1{
     font-size:44px;
+    transition: color 300ms linear;
 }
 #content{
     position:absolute;
@@ -192,11 +248,31 @@ h1{
     z-index: 20;
     padding:100px;
     
+    
 }
+
+
 #content p{
     font-size:16px;
+    transition: color 300ms linear;
 }
-#tech, #about{
+#tech, #about, #contact{
     height:5em;
+}
+
+
+
+/*------------Light Mode------------*/
+body.lightMode{
+    background-color: var(--text);
+    width: 100%;
+    display: block;
+    margin: auto;
+    min-height: 100vh;
+    min-width:20vw;
+    transition: background-color 300ms linear;  
+}
+body.lightMode h1, body.lightMode p{
+    color:var(--bg);
 }
 

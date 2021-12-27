@@ -1,46 +1,68 @@
-var image = document.querySelector(".logo");
+function loadPage(){
+    window.scrollTo(0,0); 
 
-function logoClick(){
-    window.location.href = "#";
+    homeBtn.classList.add("is-active");
+    contactBtn.classList.remove("is-active");
+    aboutBtn.classList.remove("is-active");
+    techBtn.classList.remove("is-active");
 }
+
+
+var homeBtn = document.getElementById('homeBtn');
+var about = document.getElementById('about');
+var aboutBtn = document.getElementById('aboutBtn');
+
+var contact = document.getElementById('contact');
+var contactBtn = document.getElementById('contactBtn');
+
+var tech = document.getElementById('tech');
+var techBtn = document.getElementById('techBtn');
+
+function getHome(){
+    scrollTo(0,0);
+    if(!homeBtn.classList.contains("is-active")){
+        homeBtn.classList.add("is-active");
+        contactBtn.classList.remove("is-active");
+        aboutBtn.classList.remove("is-active");
+        techBtn.classList.remove("is-active");
+    }
+}
+
+function aboutClick() {   
+    about.scrollIntoView();
+    if(!aboutBtn.classList.contains("is-active")){
+        aboutBtn.classList.add("is-active");
+        contactBtn.classList.remove("is-active");
+        homeBtn.classList.remove("is-active");
+        techBtn.classList.remove("is-active");
+    }
+}
+
+function contactClick() {
+    contact.scrollIntoView();
+    if(!contactBtn.classList.contains("is-active")){
+        contactBtn.classList.add("is-active");
+        aboutBtn.classList.remove("is-active");
+        homeBtn.classList.remove("is-active");
+        techBtn.classList.remove("is-active");
+    }
+}
+
+function techClick() {
+    tech.scrollIntoView();
+    if(!techBtn.classList.contains("is-active")){
+        techBtn.classList.add("is-active");
+        aboutBtn.classList.remove("is-active");
+        homeBtn.classList.remove("is-active");
+        contactBtn.classList.remove("is-active");
+    }
+}
+
 
 //TODO
 /*function tabSwitch(){
     this.classList.toggle('is-active'); 
 }*/
 
-document.getElementById("theme")
-.addEventListener("click", function() {
-  if (this.classList.contains("is-active")) {
-    this.classList.remove("is-active");
-    document.querySelector("body").style.backgroundColor = "#1a1a1a";
 
-    var heading = document.querySelectorAll("h1");
-    for(var i = 0;i < heading.length;i++){
-        heading[i].style.color = "rgb(220, 220, 220)";
-    }
-
-    var paragraph = document.querySelectorAll("p");
-    for(var i = 0;i < paragraph.length;i++){
-        paragraph[i].style.color = "rgb(220, 220, 220)";
-    }
-
-  } 
-  else{
-    this.classList.add("is-active");
-    document.querySelector("body").style.backgroundColor = "rgb(220, 220, 220)";
-
-    var heading = document.querySelectorAll("h1");
-    for(var i = 0;i < heading.length;i++){
-        heading[i].style.color = "#1a1a1a";
-    }
-
-    var paragraph = document.querySelectorAll("p");
-    for(var i = 0;i < paragraph.length;i++){
-        paragraph[i].style.color = "#1a1a1a";
-    }
-    
-    
-  } 
-});
 
