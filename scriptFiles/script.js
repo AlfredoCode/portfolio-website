@@ -60,9 +60,7 @@ function techClick() {
 
 
 //TODO
-/*function tabSwitch(){
-    this.classList.toggle('is-active'); 
-}*/
+    //Switching tabs also depends on position of scroll
 
 
 

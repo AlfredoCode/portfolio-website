@@ -62,7 +62,7 @@ body{
 #navigation{
     width:100%;
     background-color: var(--navbar);
-    min-height:4em;
+    min-height:3.5em;
     position: fixed;
     z-index: 1000;  
     
@@ -97,33 +97,16 @@ body{
     display:block;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 400;
-
+    text-transform: uppercase;
     border-radius:30px;
-    /*background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgb(221, 4, 228) 0%, rgba(2,83,185,1) 100.2% );*/
-
-
-   
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: opacity 500ms ease 0s;   
 }
 .link a:hover{
     opacity:0.9;
-    
-     text-shadow:
-    -1px -1px 0 #000000,
-    -1px -1px 5px #00d9ff9b,
-    1px -1px 5px #00d9ff9b,
-    -1px 1px 2px #ff00ea,
-    1px 1px 2px #ffe600;
-
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    -o-transition: all .2s;
-    transition: all .2s;
-
-    /*background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgb(185, 2, 2) 0%, rgb(221, 4, 228) 100.2% );*/
-    box-shadow: 0 4px 8px 0 rgb(221, 4, 228), 0 -4px 8px 0 rgba(2,83,185,1); 
-
+    transition: opacity 500ms ease 0s;
     cursor:pointer;
-
 
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -136,16 +119,16 @@ body{
 .link{
     text-align: center;
     margin: 0.6em;
+    flex-shrink: 0;
     
 }
+
 a.is-active{
-    background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgb(185, 2, 2) 0%, rgb(221, 4, 228) 100.2% );
-    /*box-shadow: 0 4px 8px 0 rgba(0, 89, 255, 0.568), 0 -4px 8px 0 rgb(0, 0, 0);*/
-    box-shadow: 0 4px 8px 0 rgb(221, 4, 228), 0 -4px 8px 0 rgba(2,83,185,1); 
     opacity:0.9;
     text-shadow: 
-    -1px -1px 5px #0099ffad,
-    -1px -1px 5px rgba(255, 255, 255, 0.589);
+    0px 0px 3px rgba(255, 255, 255, 0.589);
+    border-bottom:rgb(192, 9, 79);
+    border-bottom-style: solid;
 
 }
 
@@ -203,13 +186,11 @@ a.is-active{
 
 
 
-
 @media screen and (min-width: 1280px) {
     .link a {
       font-size:20px;
       width:auto;
       padding:10px 30px 10px 30px;
-      transition: 0.2s;
     }
     .navbar{
         height:5em;
@@ -235,6 +216,8 @@ a.is-active{
 h1{
     font-size:44px;
     transition: color 300ms linear;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
 }
 #content{
     position:absolute;
@@ -275,4 +258,6 @@ body.lightMode{
 body.lightMode h1, body.lightMode p{
     color:var(--bg);
 }
+
+
 
